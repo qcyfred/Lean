@@ -26,12 +26,21 @@
             "program": "${workspaceFolder}/Launcher/bin/Debug/QuantConnect.Lean.Launcher.dll",
             "args": [
                 "--config",
-                "${workspaceFolder}/Launcher/bin/Debug/config.json"
+                "${workspaceFolder}/Launcher/config.json"
             ],
             "cwd": "${workspaceFolder}/Launcher/bin/Debug/",
             "stopAtEntry": false,
             "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
+            "justMyCode": false,
+            "internalConsoleOptions": "neverOpen",
+            
+            // 这是调试python的时候需要的
+            "env": {
+                "PYTHONNET_RUNTIME": "python",
+                "PYTHONPATH": "/home/qcy/.conda/envs/lean_study/lib/python3.9/site-packages",
+                "PYTHONNET_PYDLL": "/home/qcy/.conda/envs/lean_study/lib/libpython3.9.so",
+                 "LD_LIBRARY_PATH": "/usr/lib/x86_64-linux-gnu:/home/qcy/.conda/envs/lean_study/lib", // 需要优先读取系统的
+            }
         },
         {
             "name": "Attach to Python",
